@@ -6,9 +6,9 @@ library("rpart.plot",lib.loc=paste(PATH,"R_lib/",sep=""))
 library("Rcpp",lib.loc=paste(PATH,"R_lib/",sep=""))
 Sys.setenv("PKG_CXXFLAGS"="-fopenmp")
 Sys.setenv("PKG_LIBS"="-fopenmp")
-sourceCpp(paste(PATH,"CTHybrid/splitc.cpp",sep="")
+sourceCpp(paste(PATH,"CTHybrid/splitc.cpp",sep=""))
 
-db <- read.csv(paste(PATH,"CTHybrid/dbnoafter.csv"))
+db <- read.csv(paste(PATH,"CTHybrid/dbnoafter.csv",sep=""))
 #db = db[1:1000,]
 # fit1 = rpart (cbind(outcome,TrtBin,pscore,trans_outcome) ~ . ,
 #                 db,
