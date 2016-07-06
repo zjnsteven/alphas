@@ -1,0 +1,18 @@
+#!/bin/tcsh
+#PBS -N ad:jz-wb
+#PBS -l nodes=1:c18x:ppn=12
+#PBS -l walltime=48:00:00
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+#mpirun --mca mpi_warn_on_fork --map-by node -np 12 python-mpi /sciclone/home00/zjn/wbproj/causalTree/runscript.py
+#mpirun --map-by node -np 8 python-mpi /sciclone/home00/zjn/wbproj/CTHybrid/runscript.py
+#setenv OMP_NUM_THREADS 6
+#mvp2run -c 2 -m cyclic -v  -e MV2_ENABLE_AFFINITY=0 /sciclone/home00/zjn/wbproj/CTHybrid/runscript.py
+
+
+#setenv OMP_NUM_THREADS 1
+#setenv OMP_PROC_BIND TRUE
+
+mpirun --map-by node -np 100 /sciclone/home00/zjn/wbproj/CTHybrid/runscript.py
+#python /sciclone/home00/zjn/wbproj/CTHybrid/runscript.py 1 2
