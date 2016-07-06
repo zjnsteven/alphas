@@ -1,5 +1,5 @@
 
-PATH = /sciclone/home00/zjn/wbproj/
+PATH = "/sciclone/home00/zjn/wbproj/"
 .libPaths( c( .libPaths(),paste(PATH,"R_lib/",sep="")))
 library("rpart",lib.loc=paste(PATH,"R_lib/",sep=""))
 library("rpart.plot",lib.loc=paste(PATH,"R_lib/",sep=""))
